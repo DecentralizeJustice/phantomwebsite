@@ -34,7 +34,7 @@ exports.handler = async (event) => {
 
 async function getText(){
   // const docInfo = {_id: 69, messageArray: [] }
-  // await collection.insertOne(docInfo)
+  // await collection.insertOne(docInfo) 
   const test = await collection.findOne(
     { _id: 69 }, { projection : { messageArray: { $slice: -50 } }}
   )
