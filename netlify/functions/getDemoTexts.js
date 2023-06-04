@@ -3,9 +3,9 @@ const mongoServerLocation = process.env.mongoServerLocation
 const { MongoClient, ServerApiVersion } = require('mongodb')
 const uri = "mongodb+srv://main:" + mongoDBPassword + "@"+ mongoServerLocation + "/?retryWrites=true&w=majority"
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
+const collection = client.db("demo").collection("demo")
 exports.handler = async (event) => {
   try {
-    const collection = client.db("demo").collection("demo")
     const textObjectDirty = await collection.findOne(
         { _id: 69 }, { projection : { messageArray: { $slice: -50 } }}
       )
