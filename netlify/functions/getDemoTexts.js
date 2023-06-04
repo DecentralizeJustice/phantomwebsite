@@ -3,6 +3,7 @@ const mongoServerLocation = process.env.mongoServerLocation
 const { MongoClient, ServerApiVersion } = require('mongodb')
 const uri = "mongodb+srv://main:" + mongoDBPassword + "@"+ mongoServerLocation + "/?retryWrites=true&w=majority"
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
+const collection = client.db("demo").collection("demo")
 exports.handler = async (event) => {
   try {
     const textObjectDirty = await getText()
@@ -30,7 +31,6 @@ exports.handler = async (event) => {
 }
 
 async function getText(){
-  const collection = client.db("demo").collection("demo")
   // const docInfo = {_id: 69, messageArray: [] }
   // await collection.insertOne(docInfo)
   const test = await collection.findOne(
