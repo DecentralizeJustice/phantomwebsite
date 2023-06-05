@@ -114,14 +114,16 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="flex flex-wrap justify-center -m-4">
       <div class="w-full md:w-auto p-4"><img class="mx-auto" src="https://static.shuffle.dev/uploads/files/5b/5bef57da2dd7382a899f2354d0643efbf06b7e5d/image-3.png" alt=""></div>
       <div class="w-full md:flex-1 p-4">
-        <div class="flex flex-col justify-center items-center p-8 h-full text-center bg-gray-900 rounded-3xl">
-          <div class="max-w-lg">
-
-            <h1 class="font-heading mb-6 text-white font-black tracking-tight text-5xl">Protect Your Real Number</h1>
+        <div class="relative flex flex-col justify-center items-center p-8 h-full text-center bg-gray-900 overflow-hidden rounded-3xl">
+          <div class="absolute bottom-0 left-1/2 min-w-max transform -translate-x-1/2">
+            <div class="absolute bg-gradient-radial-dark w-full h-full"></div><img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685922792/landingpage/pattern-grid-dark-light.svg" alt="">
+          </div>
+          <div class="relative max-w-lg"><span class="inline-block mb-3 text-sm text-blue-500 font-bold uppercase tracking-widest">Phantom Phone</span>
+            <h1 class="font-heading mb-6 text-5xl text-white font-black tracking-tight"><span>Protect Your </span><span class="text-blue-500">Real</span><span> Number.</span></h1>
             <p class="mb-8 text-xl text-gray-500 font-bold">Rent A Phone and Protect your Real Number from spam and hacks!</p>
             <div class="flex flex-wrap justify-center -m-2">
-              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Coming Soon</a></div>
-              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-gray-400 font-bold bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-600 rounded-full" target="_blank" href="https://youtu.be/xYZblYyxITQ">Watch Video</a></div>
+              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Try Demo</a></div>
+              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-gray-400 font-bold bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-600 rounded-full" href="#">Watch Video</a></div>
             </div>
           </div>
         </div>
