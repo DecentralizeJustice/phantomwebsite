@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </section>
-<section class="py-16 bg-gray-800 overflow-hidden"><div class="container mx-auto px-4">
+<section class="py-12 bg-gray-800 overflow-hidden"><div class="container mx-auto px-4">
   <div class="relative">
     <div class="absolute top-1/2 left-1/2 min-w-max transform -translate-x-1/2 -translate-y-1/2">
       <div class="absolute bg-gradient-radial-dark-light w-full h-full"></div><img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685927797/landingpage/pattern-dark-light.png" alt=""></div>
