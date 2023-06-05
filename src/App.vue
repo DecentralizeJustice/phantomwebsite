@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="relative py-16 px-8 bg-gray-900 overflow-hidden rounded-3xl ">
           <div class="flex flex-wrap  items-center justify-center">
             <div class="w-full md:w-auto">
-              <h2 class="font-heading mb-9 text-3xl md:text-3xl text-gray-100 font-black tracking-tight text-center">Phone Number: (202) 596-6953 </h2>
+              <h2 class="font-heading mb-9 text-3xl md:text-3xl text-gray-100 font-black tracking-tight text-center">Phone Number: (240) 610-1463</h2>
             </div>
           </div>
           <div class="absolute top-1/2 left-1/2 min-w-max transform -translate-x-1/2 -translate-y-1/2">
