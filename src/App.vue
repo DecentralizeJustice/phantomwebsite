@@ -1,4 +1,29 @@
 <script setup>
+import axios from 'axios';
+import { ref } from 'vue'
+const customChatDiv = ref(null);
+async function checkForMessages() {
+  const results = await axios.get('/.netlify/functions/getDemoTexts')
+  messageArray.value = results.data
+  const div = customChatDiv.value
+  div.scrollTo({top: 99999999999999999999999999999, behavior: "smooth"})
+}
+checkForMessages()
+function localTime(epoch) {
+  var timestamp = epoch;
+  var date = new Date(timestamp);
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  var day =  date.getDate();
+  var month = date.getMonth()
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm + ' ' + day + '/' + month
+  return strTime;
+}
+const messageArray = ref([])
 // Burger menus
 document.addEventListener('DOMContentLoaded', function() {
     // open
@@ -39,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
 </script>
 
 <template>
@@ -127,6 +151,70 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-16 bg-gray-800 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap lg:items-center -m-8">
+      <div class="w-full md:w-1/2 p-8">
+        <div class="md:max-w-lg"><span class="inline-block mb-4 text-sm text-blue-500 font-bold uppercase tracking-widest">Free Phone</span>
+          <h2 class="font-heading mb-6 text-4xl md:text-5xl text-gray-100 font-black tracking-tight">Try Out Our Public Phone </h2>
+          <p class="mb-5 text-gray-500 font-bold">Use our phone here to test our text verification service. This is a public shared device though
+            , so don't use it for any private communications 😉
+          </p>
+          <div class="flex flex-wrap -m-2">
+            <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full">Learn more</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 p-8">
+        <div class="relative py-16 px-8 bg-gray-900 overflow-hidden rounded-3xl ">
+          <div class="flex flex-wrap  items-center justify-center">
+            <div class="w-full md:w-auto">
+              <h2 class="font-heading mb-9 text-3xl md:text-3xl text-gray-100 font-black tracking-tight text-center">Phone Number: (202) 596-6953 </h2>
+            </div>
+          </div>
+          <div class="absolute top-1/2 left-1/2 min-w-max transform -translate-x-1/2 -translate-y-1/2">
+            <div class="absolute bg-gradient-radial-dark w-full h-full"></div><!-- <img src="zanrly-assets/images/pattern-dark.png" alt=""> -->
+          </div>
+          <div class="grid grid-cols-1 max-h-96 overflow-y-auto" ref="customChatDiv">
+            <div class="py-2 rounded-md flex flex-wrap items-center justify-left" v-for="n in messageArray">            
+              <div class="chat chat-start"> 
+              <div class="chat-image avatar"> <div class="w-10 rounded-full"> 
+                <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685932292/landingpage/man_3.png" /> 
+                </div> 
+              </div> 
+              <div class="chat-header"> {{n.from}}
+              </div> 
+              <div class="chat-bubble">{{n.text}}</div> 
+              <div class="chat-footer opacity-50">
+            Sent at {{localTime(n.sentStamp)}}
+          </div>
+            </div></div>
+          </div>
+<!--           <div class="flex items-center justify-center max-h-80 overflow-y-auto" ref="customChatDiv">
+            <div class="chat chat-start py-3" > 
+              <div class="chat-image avatar"> <div class="w-10 rounded-full"> 
+                <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685932292/landingpage/man_3.png" /> 
+                </div> 
+              </div> 
+              <div class="chat-header">  {{n.from}}
+              </div> 
+              <div class="chat-bubble">{{n.text}}</div> 
+              <div class="chat-footer opacity-50">
+            Sent at {{localTime(n.sentStamp)}}
+          </div>
+            </div>
+          </div> -->
+          <div class="flex flex-wrap -m-2 mt-7 items-center justify-center">
+            <div class="w-full md:w-auto p-2">
+              <div @click="checkForMessages" class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 rounded-full">Check For New Messages</div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
