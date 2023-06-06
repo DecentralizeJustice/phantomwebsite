@@ -18,9 +18,17 @@ async function checkForMessages() {
 onMounted(() => {
   checkForMessages()
 })
+const targetId = ref('123')
+
+const scrollToElement = () =>  {
+  const el = document.getElementById(targetId.value);
+
+  if (el) {
+    el.scrollIntoView();
+  }
+}
 function getAvatar(censoredNumber){
   const digit = Number(censoredNumber[censoredNumber.length-5])
-  console.log(digit)
   const avatars = [
   'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024261/landingpage/avatars/man.svg',
   'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024277/landingpage/avatars/man_1.svg',
@@ -173,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h1 class="font-heading mb-6 text-5xl text-white font-black tracking-tight"><span>Protect Your </span><span class="text-blue-500">Real</span><span> Number.</span></h1>
             <p class="mb-8 text-xl text-gray-500 font-bold">Rent A Phone and Protect your Real Number from spam and hacks!</p>
             <div class="flex flex-wrap justify-center -m-2">
-              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Try Demo</a></div>
+              <div class="w-full md:w-auto p-2"><button class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600  rounded-full" @click='scrollToElement'>Try Demo</button></div>
               <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-gray-400 font-bold bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-600 rounded-full" href="#">Watch Video</a></div>
             </div>
           </div>
@@ -188,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="w-full md:w-1/2 p-8">
         <div class="md:max-w-lg"><span class="inline-block mb-4 text-sm text-blue-500 font-bold uppercase tracking-widest">Free Phone</span>
           <h2 class="font-heading mb-6 text-4xl md:text-5xl text-gray-100 font-black tracking-tight">Try Out Our Public Phone </h2>
-          <p class="mb-5 text-gray-500 font-bold">Use our phone here to test our text verification service. This is a public shared device though
+          <p class="mb-5 text-gray-500 font-bold">Use our phone here to test our text verification service. This is a public and shared device though
             , so don't use it for any private communications 😉
           </p>
           <div class="flex flex-wrap -m-2">
@@ -196,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
       </div>
-      <div class="w-full md:w-1/2 p-8">
+      <div class="w-full md:w-1/2 p-8" id="123">
         <div class="relative py-16 px-8 bg-gray-900 overflow-hidden rounded-3xl ">
           <div class="flex flex-wrap  items-center justify-center">
             <div class="w-full md:w-auto">
@@ -283,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="flex flex-col justify-between p-8 h-full bg-blue-500 rounded-3xl">
             <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-white font-bold uppercase tracking-widest">One Month </span>
               <h2 class="font-heading text-4xl text-white font-black tracking-tight"><span>$20</span><span class="text-xl text-blue-400 font-bold">/mo</span></h2>
-              <p class="mb-8 text-sm text-blue-200 font-bold">For One Month</p>
+              <p class="mb-8 text-sm text-blue-200 font-bold">Billed One Month at a Time</p>
               <ul><li class="flex items-center mb-4">
                 <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">1,000 Text a Month</p>
                 </li>
