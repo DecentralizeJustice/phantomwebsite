@@ -1,14 +1,41 @@
 <script setup>
 import axios from 'axios';
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 const customChatDiv = ref(null);
+
+function waitforme(millisec) {
+    return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, millisec);
+    })
+}
 async function checkForMessages() {
   const results = await axios.get('/.netlify/functions/getDemoTexts')
   messageArray.value = results.data
+  await waitforme(750)
   const div = customChatDiv.value
   div.scrollTo({top: 99999999999999999999999999999, behavior: "smooth"})
 }
-checkForMessages()
+onMounted(() => {
+  checkForMessages()
+})
+function getAvatar(censoredNumber){
+  const digit = Number(censoredNumber[censoredNumber.length-5])
+  console.log(digit)
+  const avatars = [
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024261/landingpage/avatars/man.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024277/landingpage/avatars/man_1.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024695/landingpage/avatars/woman_1.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024622/landingpage/avatars/woman.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024666/landingpage/avatars/man_2.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024678/landingpage/avatars/man_3.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024688/landingpage/avatars/man_4.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024702/landingpage/avatars/boy.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024713/landingpage/avatars/man_5.svg',
+  'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024733/landingpage/avatars/man_6.svg'
+  ]
+  return avatars[digit]
+}
+// checkForMessages()
 function localTime(epoch) {
   var timestamp = epoch;
   var date = new Date(timestamp);
@@ -173,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="relative py-16 px-8 bg-gray-900 overflow-hidden rounded-3xl ">
           <div class="flex flex-wrap  items-center justify-center">
             <div class="w-full md:w-auto">
-              <h2 class="font-heading mb-9 text-3xl md:text-3xl text-gray-100 font-black tracking-tight text-center">Phone Number: (240) 610-1463</h2>
+              <h2 class="font-heading mb-9 text-3xl md:text-3xl text-gray-100 font-black tracking-tight text-center">Phone Number:<wbr> (240) 610-1463</h2>
             </div>
           </div>
           <div class="absolute top-1/2 left-1/2 min-w-max transform -translate-x-1/2 -translate-y-1/2">
@@ -183,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="py-2 rounded-md flex flex-wrap items-center justify-left" v-for="n in messageArray">            
               <div class="chat chat-start"> 
               <div class="chat-image avatar"> <div class="w-10 rounded-full"> 
-                <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685932292/landingpage/man_3.png" /> 
+                <img :src=getAvatar(n.from) /> 
                 </div> 
               </div> 
               <div class="chat-header"> {{n.from}}
@@ -210,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div> -->
           <div class="flex flex-wrap -m-2 mt-7 items-center justify-center">
             <div class="w-full md:w-auto p-2">
-              <div @click="checkForMessages" class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 rounded-full">Check For New Messages</div>
+              <button @click="checkForMessages" class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 rounded-full">Check For New Messages</button>
             </div>
           </div>
         </div>
