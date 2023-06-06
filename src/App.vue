@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-gray-900 rounded-3xl">
             <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-blue-500 font-bold uppercase tracking-widest">BASIC Long Term</span>
-              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$15/mo</h2>
+              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$10/mo</h2>
               <p class="mb-8 text-sm text-gray-700 font-bold">Billed Annually</p>
               <ul><li class="flex items-center mb-4">
                 <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">1,000 Text a Month</p>
@@ -290,10 +290,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-blue-500 rounded-3xl">
             <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-white font-bold uppercase tracking-widest">One Month </span>
-              <h2 class="font-heading text-4xl text-white font-black tracking-tight"><span>$20</span><span class="text-xl text-blue-400 font-bold">/mo</span></h2>
-              <p class="mb-8 text-sm text-blue-200 font-bold">Billed One Month at a Time</p>
+              <h2 class="font-heading text-4xl text-white font-black tracking-tight"><span>$10</span><span class="text-xl text-blue-400 font-bold">/mo</span></h2>
+              <p class="mb-8 text-sm text-blue-200 font-bold">Billed 3 Months At A Time</p>
               <ul><li class="flex items-center mb-4">
-                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">1,000 Text a Month</p>
+                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">100 Text a Month</p>
                 </li>
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold" contenteditable="false">Web Access</p>
@@ -301,6 +301,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Basic Support</p>
                 </li>
+                <li class="flex items-center mb-4">
+                  <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Extra Text Cost 2 cents</p>
+                </li>
+
 
 
               </ul></div>
@@ -314,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-gray-900 rounded-3xl">
             <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-blue-500 font-bold uppercase tracking-widest">ADVANCED Long Term</span>
-              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$25/mo</h2>
+              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$20/mo</h2>
               <p class="mb-8 text-sm text-gray-700 font-bold">Billed Annually</p>
               <ul><li class="flex items-center mb-4">
                 <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Unlimted Text</p>
