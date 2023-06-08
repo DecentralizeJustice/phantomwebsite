@@ -10,7 +10,7 @@ import Checkout from "../views/checkout.vue"
   `
 } */
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/'),
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
     {
