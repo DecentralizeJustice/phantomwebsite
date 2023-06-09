@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
                   'paymentMethods': [
                       'XMR'
                   ],
-                  'redirectURL': 'https://anonshop.app/login',
+                  'redirectURL': 'https://phantomphone.com/login',
                   'redirectAutomatically': true
               }
               // 'metadata': { info: 'test'}

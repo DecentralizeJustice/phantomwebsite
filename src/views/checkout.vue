@@ -16,7 +16,7 @@ async function getPassphrase() {
   numberArray.value = tempNumberArray
 }
 const purchaseInfo = `This passphrase is how you will access your account,  
-protect it like a password. After you press continue, you will be taken to a payment portal. 
+so protect it like a password. After you press continue, you will be taken to a payment portal. 
 After your payment has 3 confirmations, you can use this passphrase to log in to your account.`
 async function goToBTCPay() {
   buttonDisabled.value = true
@@ -25,6 +25,7 @@ async function goToBTCPay() {
     purchase: 'premium',
     numberArray: toRaw(numberArray.value)
   })
+  window.location.href = results.data.checkoutLink
 }
 </script>
 
