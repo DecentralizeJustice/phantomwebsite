@@ -19,8 +19,8 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: "/checkout",
-      name: "checkout",
+      path: "/checkoutpremium",
+      name: "checkoutpremium",
       component: Checkout
     } 
   ],
