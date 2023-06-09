@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/landingpage.vue"
 import Checkout from "../views/checkout.vue"
+import Login from "../views/login.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -22,6 +23,11 @@ const router = createRouter({
       path: "/checkoutpremium",
       name: "checkoutpremium",
       component: Checkout
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
     } 
   ],
 })

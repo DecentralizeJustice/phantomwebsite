@@ -1,6 +1,6 @@
 <script setup>
 import axios from 'axios';
-import { ref } from 'vue'
+import { ref, toRaw } from 'vue'
 import { getRandomInt, numberArrayToWordArray } from '@/assets/misc.js'
 const step = ref(0)
 const numberArray = ref([])
@@ -20,7 +20,11 @@ protect it like a password. After you press continue, you will be taken to a pay
 After your payment has 3 confirmations, you can use this passphrase to log in to your account.`
 async function goToBTCPay() {
   buttonDisabled.value = true
-  console.log('ran')
+  const results = await axios.post('/.netlify/functions/submitOrder',
+  {
+    purchase: 'premium',
+    numberArray: toRaw(numberArray.value)
+  })
 }
 </script>
 
