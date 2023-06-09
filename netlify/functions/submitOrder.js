@@ -7,16 +7,25 @@ exports.handler = async (event, context) => {
     const params = event.body
     const parsed = JSON.parse(params)
   
-    // const amount = parsed.amount
-    // const amountSchema = Joi.number().required().min(0).max(99999)
-    // await amountSchema.validateAsync(amount)
-  
-    // const metadata = Buffer.from(JSON.stringify(parsed.metadata)).toString('base64')
+    if (parsed.purchase !== 'premium' && parsed.purchase !== 'basic' && parsed.purchase !== 'standard') {
+      return {
+        statusCode: 500,
+        body: ''
+      }
+    }
+    const numberArraySchema = Joi.array().length(8).items(Joi.number().max(2050).min(0))
+    await numberArraySchema.validateAsync(parsed.numberArray)
+    const numberArray = parsed.numberArray.toString()
     const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
+    const priceDictionary = {
+      premium: 60,
+      standard: 45,
+      basic: 30
+    }
     const response = await axios.post(
           storeAddress,
           {
-              'amount': 60,
+              'amount': priceDictionary[parsed.purchase],
               'speedPolicy': 'MediumSpeed',
               'checkout': {
                   'paymentMethods': [
@@ -24,8 +33,11 @@ exports.handler = async (event, context) => {
                   ],
                   'redirectURL': 'https://phantomphone.com/login',
                   'redirectAutomatically': true
-              }
-              // 'metadata': { info: 'test'}
+              },
+              'metadata': { 
+                numberArray: numberArray,
+                purchase: parsed.purchase
+               }
           },
           {
               headers: {
