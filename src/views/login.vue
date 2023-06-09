@@ -9,9 +9,9 @@ import { getRandomInt, numberArrayToWordArray } from '@/assets/misc.js'
   <div class="container mx-auto px-4">
     <div class="relative pt-16 pb-24 md:pb-52 md:max-w-3xl mx-auto bg-gray-900 overflow-hidden rounded-3xl">
       <div class="absolute top-1/2 left-1/2 min-w-max transform -translate-x-1/2 -translate-y-1/2">
-        <div class="absolute bg-gradient-radial-dark w-full h-full"></div><img src="zanrly-assets/images/pattern-dark.png" alt="">
+        <div class="absolute bg-gradient-radial-dark w-full h-full"></div><img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685928443/landingpage/pattern-dark.png" alt="">
       </div>
-      <div class="relative"><img class="mb-24 mx-auto" src="zanrly-assets/logos/zanrly-logo-xl-white.svg" alt="">
+      <div class="relative"><img class="mb-24 mx-auto" src="" alt="">
         <div class="md:max-w-md mx-auto">
           <div class="mb-10 text-center">
             <h2 class="font-heading mb-4 text-4xl md:text-5xl text-white font-black tracking-tight">Welcome Back</h2>
