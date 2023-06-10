@@ -22,7 +22,7 @@ async function goToBTCPay() {
   buttonDisabled.value = true
   const results = await axios.post('/.netlify/functions/submitOrder',
   {
-    purchase: 'premium',
+    purchase: '12month',
     numberArray: toRaw(numberArray.value)
   })
   window.location.href = results.data.checkoutLink
@@ -42,17 +42,20 @@ async function goToBTCPay() {
           
           <div class="w-full md:w-1/2 p-8 order-first md:order-last">
             <div class="md:max-w-md mx-auto text-center" v-if='step === 0'>
-              <span class="inline-block mb-6 text-lg text-blue-500 font-bold uppercase tracking-widest">Purchase PREMIUM 3 Month Rental</span>
-                <h2 class="font-heading text-6xl text-white font-black tracking-tight">$20/mo</h2>
-                    <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">60 USD For 3 Months</p>
+              <span class="inline-block mb-6 text-lg text-blue-500 font-bold uppercase tracking-widest">Purchase 1 Year Phone Rental</span>
+                <h2 class="font-heading text-6xl text-white font-black tracking-tight">$10/mo</h2>
+                    <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">120 USD For 12 Months</p>
                     <ul class="text-left"><li class="flex items-center mb-4">
-                      <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">Unlimited Texts*</p>
+                      <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">1,000 Texts a Month</p>
                       </li>
                       <li class="flex items-center mb-4">
                         <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">Web Gui Access</p>
                       </li>
                       <li class="flex items-center mb-4">
                         <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">Premium Support</p>
+                      </li>
+                      <li class="flex items-center mb-4">
+                        <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="font-bold text-gray-100 text-xl">Extra Text Available for Purchase</p>
                       </li>
                       <li class="flex items-center mb-4">
                         <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="font-bold text-gray-100 text-xl">Access to Early Features First</p>

@@ -307,7 +307,7 @@ const messageArray = ref([])
                   </div>
                   <div class="flex-1 p-4">
                     <h3 class="font-heading mb-3 text-2xl text-gray-100 font-bold">Give Your Rental Number</h3>
-                    <p class="text-gray-500 font-bold">If a service such as twitter or uber eats ask for your phone number, you give your rental number instead.</p>
+                    <p class="text-gray-500 font-bold">If a service such as twitter, telegram, or signal ask for your phone number, you give your rental number instead.</p>
                   </div>
                 </div>
               </div>
@@ -325,7 +325,7 @@ const messageArray = ref([])
                   </div>
                   <div class="flex-1 p-4">
                     <h3 class="font-heading mb-3 text-2xl text-gray-100 font-bold">Stay Private and Safe</h3>
-                    <p class="text-gray-500 font-bold">Your phone rental protects you from spam and hacks. This means that you can thousands of </p>
+                    <p class="text-gray-500 font-bold">Your phone rental protects you from spam and hacks while preserving your privacy. </p>
                   </div>
                 </div>
               </div>

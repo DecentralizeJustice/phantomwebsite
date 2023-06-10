@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
     const params = event.body
     const parsed = JSON.parse(params)
   
-    if (parsed.purchase !== 'premium' && parsed.purchase !== 'basic' && parsed.purchase !== 'standard') {
+    if (parsed.purchase !== '12month' && parsed.purchase !== '1month' && parsed.purchase !== '3month') {
       return {
         statusCode: 500,
         body: ''
@@ -18,9 +18,9 @@ exports.handler = async (event, context) => {
     const numberArray = parsed.numberArray.toString()
     const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
     const priceDictionary = {
-      premium: 60,
-      standard: 45,
-      basic: 30
+      '1month': 18,
+      '3month': 45,
+      '12month': 120
     }
     const response = await axios.post(
           storeAddress,
