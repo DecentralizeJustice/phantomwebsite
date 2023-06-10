@@ -155,22 +155,22 @@ const messageArray = ref([])
       <div class="absolute bg-gradient-radial-dark-light w-full h-full"></div><img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1685927797/landingpage/pattern-dark-light.png" alt=""></div>
     <div class="relative">
       <div class="mb-12 max-w-2xl mx-auto text-center">
-        <h2 class="font-heading text-4xl md:text-5xl text-gray-100 font-black tracking-tight">Choose a Rental plan that suits you.</h2>
+        <h2 class="font-heading text-4xl md:text-5xl text-gray-100 font-black tracking-tight">Choose a Rental Time that works for You!</h2>
       </div>
       <div class="flex flex-wrap -m-4">
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-gray-900 rounded-3xl">
-            <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-blue-500 font-bold uppercase tracking-widest">BASIC 3 Month</span>
-              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$10/mo</h2>
-              <p class="mb-8 text-sm text-gray-700 font-bold">Billed 3 Months At A Time</p>
+            <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-blue-500 font-bold uppercase tracking-widest">1 Month</span>
+              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$18/mo</h2>
+              <p class="mb-8 text-sm text-gray-700 font-bold">Billed 1 Months At A Time</p>
               <ul><li class="flex items-center mb-4">
-                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">60 Texts a Month</p>
+                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">100 Texts a Month</p>
                 </li>
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Web Gui Access</p>
                 </li>
                 <li class="flex items-center mb-4">
-                  <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Basic Support</p>
+                  <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Standard Support</p>
                 </li>
                 <li class="flex items-center">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="font-bold text-gray-100">Extra Text Available for Purchase</p>
@@ -187,10 +187,14 @@ const messageArray = ref([])
         </div>
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-blue-500 rounded-3xl">
-            <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-white font-bold uppercase tracking-widest">Standard 3 Month </span>
+            <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-white font-bold uppercase tracking-widest">3 Month </span>
               <h2 class="font-heading text-4xl text-white font-black tracking-tight"><span>$15</span><span class="text-xl text-blue-400 font-bold">/mo</span></h2>
               <p class="mb-8 text-sm text-blue-200 font-bold">Billed 3 Months At A Time</p>
-              <ul><li class="flex items-center mb-4">
+              <ul>
+                <li class="flex items-center mb-4">
+                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">16% Discount for 3 Month Commitment</p>
+                </li>
+                <li class="flex items-center mb-4">
                 <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">400 Texts a Month</p>
                 </li>
                 <li class="flex items-center mb-4">
@@ -201,9 +205,6 @@ const messageArray = ref([])
                 </li>
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Extra Text Available for Purchase</p>
-                </li>
-                <li class="flex items-center mb-4">
-                  <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8335L7.50033 14.1668L15.8337 5.8335" stroke="#F3F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Access to Early Features First</p>
                 </li>
 
 
@@ -218,11 +219,15 @@ const messageArray = ref([])
         </div>
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-gray-900 rounded-3xl">
-            <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-blue-500 font-bold uppercase tracking-widest">PREMIUM 3 Month</span>
-              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$20/mo</h2>
-              <p class="mb-8 text-sm text-gray-700 font-bold">Billed 3 Months At A Time</p>
-              <ul><li class="flex items-center mb-4">
-                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Unlimited Texts*</p>
+            <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-blue-500 font-bold uppercase tracking-widest">1 Year</span>
+              <h2 class="font-heading text-4xl text-white font-black tracking-tight">$10/mo</h2>
+              <p class="mb-8 text-sm text-gray-700 font-bold">Billed 12 Months At A Time</p>
+              <ul>
+                <li class="flex items-center mb-4">
+                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">44% Discount for 1 Year Commitment</p>
+                </li>
+                <li class="flex items-center mb-4">
+                <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">1,000 Texts a Month</p>
                 </li>
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Web Gui Access</p>
@@ -230,6 +235,7 @@ const messageArray = ref([])
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold">Premium Support</p>
                 </li>
+
                 <li class="flex items-center mb-4">
                   <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="font-bold text-gray-100">Extra Text Available for Purchase</p>
                 </li>
