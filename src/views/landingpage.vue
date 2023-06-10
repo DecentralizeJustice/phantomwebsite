@@ -118,7 +118,7 @@ const messageArray = ref([])
               </div> 
               <div class="chat-header"> {{n.from}}
               </div> 
-              <div class="chat-bubble">{{n.text}}</div> 
+              <div class="chat-bubble break-words">{{n.text}}</div> 
               <div class="chat-footer opacity-50">
             Sent at {{localTime(n.sentStamp)}}
           </div>
