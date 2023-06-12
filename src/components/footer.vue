@@ -17,11 +17,13 @@
           <li class="inline-flex p-6"><a class="inline-block text-gray-500 hover:text-gray-600 font-bold" href="#">Contact Us</a></li>
         </ul>
         <div class="flex flex-wrap justify-center -m-1.5 mb-10">
-<!--           <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="#"><img src="zanrly-assets/images/footers/insta-dark.svg" alt=""></a></div>
-          <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="#"><img src="zanrly-assets/images/footers/twitter-dark.svg" alt=""></a></div>
-          <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="#"><img src="zanrly-assets/images/fb-dark.svg" alt=""></a></div> -->
+          <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="https://www.youtube.com/@anonindustries"><img style='width: 50%;height: auto;' src="https://res.cloudinary.com/dylevfpbl/image/upload/v1686544155/landingpage/youtube_1.svg" alt=""></a></div>
+          <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="https://twitter.com/AnonIndustries_"><img style='width: 50%;height: auto;' src="https://res.cloudinary.com/dylevfpbl/image/upload/v1686544416/landingpage/twitter.svg" alt=""></a></div>
+          <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="https://www.reddit.com/user/dgoon21"><img style='width: 60%;height: auto;' src="https://res.cloudinary.com/dylevfpbl/image/upload/v1686544283/landingpage/reddit.svg" alt=""></a></div>
+          <div class="w-auto p-1.5"><a class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full" href="https://bitcointalk.org/index.php?topic=5422392.msg61324168#msg61324168"><img style='width: 60%;height: auto;' src="https://res.cloudinary.com/dylevfpbl/image/upload/v1686544551/landingpage/bitcoins.svg" alt=""></a></div>
+        
         </div>
-        <p class="text-gray-500 text-center font-bold"><span>Ⓒ Copyright. All rights reserved by </span><a class="text-blue-500 hover:text-blue-600" href="#">Phantom Phone</a></p>
+        <p class="text-gray-500 text-center font-bold"><span>Ⓒ Copyright. All rights reserved by </span><a class="text-blue-500 hover:text-blue-600">Phantom Phone</a></p>
       </div>
     </div>
   </div>
