@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "human-readable-ids": "^1.0.4",
     "joi": "^17.9.2",
     "libsodium-wrappers": "^0.7.11",
     "mongodb": "^5.6.0",

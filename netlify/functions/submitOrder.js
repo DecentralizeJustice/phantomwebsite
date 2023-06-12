@@ -31,12 +31,13 @@ exports.handler = async (event, context) => {
                   'paymentMethods': [
                       'XMR'
                   ],
-                  'redirectURL': 'https://phantomphone.com/login',
+                  'redirectURL': 'https://phantomphone.app/login',
                   'redirectAutomatically': true
               },
               'metadata': { 
                 numberArray: numberArray,
-                purchase: parsed.purchase
+                purchase: parsed.purchase,
+                timestamp: Date.now()
                }
           },
           {

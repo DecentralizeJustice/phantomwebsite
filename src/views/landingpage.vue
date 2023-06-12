@@ -22,7 +22,6 @@ const targetId = ref('123')
 
 const scrollToElement = () =>  {
   const el = document.getElementById(targetId.value);
-
   if (el) {
     el.scrollIntoView();
   }
@@ -50,8 +49,8 @@ function localTime(epoch) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var ampm = hours >= 12 ? 'pm' : 'am';
-  var day =  date.getDate() + 1
-  var month = date.getMonth()
+  var day =  date.getDate()
+  var month = date.getMonth() + 1
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
   minutes = minutes < 10 ? '0'+minutes : minutes;
