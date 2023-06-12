@@ -11,6 +11,7 @@
       <div class="relative flex flex-col justify-centers"><a class="inline-block max-w-max mx-auto mb-10" href="#"></a>
         <ul class="-m-6 mb-7 text-center">
           <li class="inline-flex p-6"><a class="inline-block text-gray-500 hover:text-gray-600 font-bold" href="/messageMe">Message Me</a></li>
+          <li class="inline-flex p-6"><a class="inline-block text-gray-500 hover:text-gray-600 font-bold" href="/faq">FAQ</a></li>
           <li class="inline-flex p-6"><a class="inline-block text-gray-500 hover:text-gray-600 font-bold" href="https://blog.anonindustries.com/">Blog</a></li>
 <!--           <li class="inline-flex p-6"><a class="inline-block text-gray-500 hover:text-gray-600 font-bold" href="#">About Us</a></li>
           <li class="inline-flex p-6"><a class="inline-block text-gray-500 hover:text-gray-600 font-bold" href="#">Careers</a></li>
