@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
     const params = event.body
     const parsed = JSON.parse(params)
   
-    if (parsed.purchase !== '12month' && parsed.purchase !== '1month' && parsed.purchase !== '3month') {
+    if (parsed.purchase !== '12month' && parsed.purchase !== '1week' && parsed.purchase !== '3month') {
       return {
         statusCode: 500,
         body: ''
@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
     const numberArray = parsed.numberArray.toString()
     const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
     const priceDictionary = {
-      '1month': 18,
+      '1week': 18,
       '3month': 45,
       '12month': 120
     }

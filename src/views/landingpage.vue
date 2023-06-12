@@ -76,7 +76,8 @@ const messageArray = ref([])
             <p class="mb-8 text-xl text-gray-500 font-bold">Rent A Phone and use it for Phone Verifications on any service!</p>
             <div class="flex flex-wrap justify-center -m-2">
               <div class="w-full md:w-auto p-2"><button class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600  rounded-full" @click='scrollToElement'>Try Demo</button></div>
-              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-gray-400 font-bold bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-600 rounded-full" href="#">Watch Video</a></div>
+              <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-gray-400 font-bold bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-600 rounded-full" 
+                target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=xYZblYyxITQ">Watch Video</a></div>
             </div>
           </div>
         </div>
@@ -93,9 +94,9 @@ const messageArray = ref([])
           <p class="mb-5 text-gray-500 font-bold">Use our phone here to test our text verification service. This is a public and shared device though
             , so don't use it for any private communications 😉
           </p>
-          <div class="flex flex-wrap -m-2">
+<!--           <div class="flex flex-wrap -m-2">
             <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full">Learn more</a></div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="w-full md:w-1/2 p-8" id="123">
@@ -179,7 +180,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full" href="#">Coming Soon</a></div>
+                <div class="w-full p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full">Coming Soon</a></div>
               </div>
             </div>
           </div>
@@ -211,7 +212,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-blue-500 font-bold bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 rounded-full" href="#">Coming Soon</a></div>
+                <div class="w-full p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-blue-500 font-bold bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 rounded-full">Coming Soon</a></div>
               </div>
             </div>
           </div>
@@ -262,9 +263,9 @@ const messageArray = ref([])
         <div class="md:max-w-md"><span class="inline-block mb-4 text-sm text-blue-500 font-bold uppercase tracking-widest">How it works</span>
           <h2 class="font-heading mb-6 text-4xl md:text-5xl text-gray-100 font-black tracking-tight" contenteditable="false">A Real Phone that works with Every online service</h2>
           <p class="mb-5 text-gray-500 font-bold">I have built a open &amp; private system that gives you the ability to use platforms that requires a phone number privately. My phones are real phones and work on every platform!</p>
-          <div class="flex flex-wrap -m-2">
-            <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Coming Soon</a></div>
-          </div>
+<!--           <div class="flex flex-wrap -m-2">
+            <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full">Coming Soon</a></div>
+          </div> -->
         </div>
       </div>
       <div class="w-full md:w-1/2 p-8">
