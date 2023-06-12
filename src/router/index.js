@@ -4,6 +4,7 @@ import checkout12month from "../views/checkout12month.vue"
 import checkout3month from "../views/checkout3month.vue"
 import checkout1week from "../views/checkout1week.vue"
 import Login from "../views/login.vue"
+import messageMe from "../views/messageMe.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -35,6 +36,11 @@ const router = createRouter({
       path: "/checkout1week",
       name: "checkout1week",
       component: checkout1week
+    },
+    {
+      path: "/messageMe",
+      name: "messageMe",
+      component: messageMe
     },
     {
       path: "/login",
