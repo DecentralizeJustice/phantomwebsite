@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="flex flex-wrap items-center">
             <div class="w-auto hidden lg:block">
               <ul class="flex items-center justify-center">
-                <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Features</a></li>
-                <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Solutions</a></li>
+                <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="https://blog.anonindustries.com/">Blog</a></li>
+<!--                 <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Solutions</a></li>
                 <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Resources</a></li>
-                <li><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Pricing</a></li>
+                <li><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Pricing</a></li> -->
               </ul>
             </div>
           </div>
@@ -94,17 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="flex flex-col justify-center py-8 w-full">
               <ul>
-                <li class="mb-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Features</a></li>
-                <li class="mb-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Solutions</a></li>
+                <li class="mb-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="https://blog.anonindustries.com/">Blog</a></li>
+<!--                 <li class="mb-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Solutions</a></li>
                 <li class="mb-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Resources</a></li>
-                <li><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Pricing</a></li>
+                <li><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Pricing</a></li> -->
               </ul>
             </div>
             <div class="flex flex-col justify-end w-full pb-8">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 border border-gray-700 rounded-full" href="#">Log In</a></div>
-                <div class="w-full p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Get Started</a></div>
-              </div>
+                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full" href="/login">Login</a></div>
+                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="/">Home</a></div></div>
             </div>
           </div>
         </nav>
