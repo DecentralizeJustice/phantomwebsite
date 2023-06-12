@@ -180,7 +180,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full">Coming Soon</a></div>
+                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full" to="/checkout1week">Purchase</router-link></div>
               </div>
             </div>
           </div>
@@ -212,7 +212,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><a class="block w-full px-8 py-3.5 text-lg text-center text-blue-500 font-bold bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 rounded-full">Coming Soon</a></div>
+                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-blue-500 font-bold bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 rounded-full" to="/checkout3month">Purchase</router-link></div>
               </div>
             </div>
           </div>

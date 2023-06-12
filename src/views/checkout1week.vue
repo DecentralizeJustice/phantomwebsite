@@ -29,30 +29,27 @@ async function getPassphrase() {
           
           <div class="w-full md:w-1/2 p-8 order-first md:order-last">
             <div class="md:max-w-md mx-auto text-center" v-if='step === 0'>
-              <span class="inline-block mb-6 text-lg text-blue-500 font-bold uppercase tracking-widest">Purchase 1 Year Phone Rental</span>
-                <h2 class="font-heading text-6xl text-white font-black tracking-tight">$10/mo</h2>
-                    <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">120 USD For 12 Months</p>
+              <span class="inline-block mb-6 text-lg text-blue-500 font-bold uppercase tracking-widest">Purchase 1 Week Phone Rental</span>
+                <h2 class="font-heading text-6xl text-white font-black tracking-tight">$20/week</h2>
+                    <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">20 USD For 1 Week</p>
                     <ul class="text-left"><li class="flex items-center mb-4">
-                      <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">1,000 Texts a Month</p>
+                      <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">200 Texts a Week</p>
                       </li>
                       <li class="flex items-center mb-4">
                         <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">Web Gui Access</p>
                       </li>
                       <li class="flex items-center mb-4">
-                        <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">Premium Support</p>
+                        <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">Standard Support</p>
                       </li>
                       <li class="flex items-center mb-4">
                         <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="font-bold text-gray-100 text-xl">Extra Text Available for Purchase</p>
-                      </li>
-                      <li class="flex items-center mb-4">
-                        <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="font-bold text-gray-100 text-xl">Access to Early Features First</p>
                       </li>
                     </ul>
                     <div class="flex flex-wrap justify-center -m-2 mt-5">
                   <div class="w-full md:w-auto p-2"><button class="block w-full px-4 py-2.5 text-lg text-center text-white font-bold bg-blue-500 hover:bg-blue-600  rounded-full" @click="getPassphrase()">Purchase</button></div>
                 </div>
             </div>
-            <checkoutPassphrase v-if='step === 1' purchase='12month'/>
+            <checkoutPassphrase v-if='step === 1' purchase='1week'/>
           </div>
         </div>
       </div>

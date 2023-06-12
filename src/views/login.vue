@@ -55,7 +55,9 @@ function wordToNumber(word) {
 }
 function purchaseDict(purchase) {
   const dict = {
-    '12month': '12 Month'
+    '12month': '12 Month',
+    '1week': '1 week',
+    '3month': '3 month'
   }
   return dict[purchase]
 }

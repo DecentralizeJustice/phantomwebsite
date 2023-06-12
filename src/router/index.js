@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/landingpage.vue"
 import checkout12month from "../views/checkout12month.vue"
+import checkout3month from "../views/checkout3month.vue"
+import checkout1week from "../views/checkout1week.vue"
 import Login from "../views/login.vue"
 /* const User = {
   template: `
@@ -23,6 +25,16 @@ const router = createRouter({
       path: "/checkout12month",
       name: "checkout12month",
       component: checkout12month
+    },
+    {
+      path: "/checkout3month",
+      name: "checkout3month",
+      component: checkout3month
+    },
+    {
+      path: "/checkout1week",
+      name: "checkout1week",
+      component: checkout1week
     },
     {
       path: "/login",
