@@ -49,7 +49,7 @@ async function getPassphrase() {
                   <div class="w-full md:w-auto p-2"><button class="block w-full px-4 py-2.5 text-lg text-center text-white font-bold bg-blue-500 hover:bg-blue-600  rounded-full" @click="getPassphrase()">Purchase</button></div>
                 </div>
             </div>
-            <checkoutPassphrase v-if='step === 1' purchase='1week'/>
+            <checkoutPassphrase v-if='step === 1' purchase='3month'/>
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ async function signIn() {
   for (let index = 0; index < 8; index++) {
     const element = passphraseWords.value[index]
     const number = wordToNumber(element)
-    if(!number){ throw new Error(index + ' is not a correct word') }
+    if(number === false){ throw new Error(index + ' is not a correct word') }
     numberArray.push(number)
   }
   const results = await axios.post('/.netlify/functions/getOrderInfo', { passphrase: numberArray })
