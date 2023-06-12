@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/landingpage.vue"
-import Checkout from "../views/checkout.vue"
+import checkout12month from "../views/checkout12month.vue"
 import Login from "../views/login.vue"
 /* const User = {
   template: `
@@ -20,9 +20,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: "/checkoutpremium",
-      name: "checkoutpremium",
-      component: Checkout
+      path: "/checkout12month",
+      name: "checkout12month",
+      component: checkout12month
     },
     {
       path: "/login",

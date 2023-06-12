@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w-auto hidden lg:block">
               <div class="flex flex-wrap -m-2">
                 <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full" href="/login">Login</a></div>
-                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="#">Learn More</a></div>
+                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="/">Home</a></div>
               </div>
             </div>
             <div class="w-auto lg:hidden"><a class="inline-block" href="#">
