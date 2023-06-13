@@ -1,21 +1,18 @@
 <script setup>
 import { ref } from 'vue'
-function toggleSection(){
-
-}
 const faq = [
   {
     question: 'Where are your phones located?',
-    answer: `Our phones are located in the United States on site in my possession me.
+    answer: `Our phones are located in the United States.
     We can only offer US phone numbers at this time also.`
   },
   {
     question: 'What happens when your rental period ends?',
-    answer: 'When your rental period ends, we remove the sim card from the phone and we then delete your chat histoyr soon after that from our database. '
+    answer: 'When your rental period ends, we remove the sim card from the phone and we then delete your chat history soon after that from our database. '
   },
   {
     question: `How do you renew a rental?`,
-    answer: `In order to renew you simply hit the renew button 5 days before your rental peroid ends. 
+    answer: `In order to renew you simply hit the renew button 5 days before your rental period ends. 
     This button can be found in your account after you sign in.
     `
   }
