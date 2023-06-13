@@ -30,8 +30,8 @@ async function getPassphrase() {
           <div class="w-full md:w-1/2 p-8 order-first md:order-last">
             <div class="md:max-w-md mx-auto text-center" v-if='step === 0'>
               <span class="inline-block mb-6 text-lg text-blue-500 font-bold uppercase tracking-widest">Purchase 1 Week Phone Rental</span>
-                <h2 class="font-heading text-6xl text-white font-black tracking-tight">$20/week</h2>
-                    <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">20 USD For 1 Week</p>
+                <h2 class="font-heading text-6xl text-white font-black tracking-tight">$10/week</h2>
+                    <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">10 USD For 1 Week</p>
                     <ul class="text-left"><li class="flex items-center mb-4">
                       <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">200 Texts a Week</p>
                       </li>
