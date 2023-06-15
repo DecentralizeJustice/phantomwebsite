@@ -93,6 +93,12 @@ function localTime(epoch) {
   var strTime = hours + ':' + minutes + ' ' + ampm + ' ' + day + '/' + month
   return strTime;
 }
+function getChatImage(sender) {
+  if (sender !== 'dgoon') {
+    return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024666/landingpage/avatars/man_2.svg'
+  }
+  return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024702/landingpage/avatars/boy.svg'
+}
 onMounted(() => {
   const routeInfo = router.currentRoute.value
   const routeName = routeInfo.name
@@ -159,15 +165,15 @@ onMounted(() => {
                   'chat-end':  message.sender !== 'dgoon' }">
                     <div class="chat-image avatar">
                       <div class="w-10 rounded-full">
-                        <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1686024666/landingpage/avatars/man_2.svg" />
+                        <img :src="getChatImage(message.sender)" />
                       </div>
                     </div>
-                    <div class="chat-header">
+                    <div class="chat-header text-white">
                       {{ message.sender }}
                     
                     </div>
-                    <div class="chat-bubble">{{ message.message }} </div>
-                    <div class="chat-footer opacity-50">
+                    <div class="chat-bubble break-words">{{ message.message }} </div>
+                    <div class="chat-footer text-white">
                       Sent at {{localTime(message.timestamp)}}
                     </div>
                   </div>
