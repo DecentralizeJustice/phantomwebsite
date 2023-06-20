@@ -2,7 +2,9 @@
 import axios from 'axios';
 import { ref, toRaw, onMounted } from 'vue'
 import { getRandomInt, numberArrayToWordArray } from '@/assets/misc.js'
-const props = defineProps(['purchase'])
+const props = defineProps({
+  purchaseInfo: Object
+})
 const numberArray = ref([])
 const wordArray = ref([])
 const buttonDisabled = ref(false)
@@ -21,7 +23,7 @@ async function goToBTCPay() {
   buttonDisabled.value = true
   const results = await axios.post('/.netlify/functions/submitOrder',
   {
-    purchase: props.purchase,
+    purchaseInfo: props.purchaseInfo,
     numberArray: toRaw(numberArray.value)
   })
   window.location.href = results.data.checkoutLink

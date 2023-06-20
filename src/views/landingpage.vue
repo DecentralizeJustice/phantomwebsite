@@ -180,7 +180,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full" to="/">Sold Out</router-link></div>
+                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full" to="/checkout1service">Purchase</router-link></div>
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ const messageArray = ref([])
         <div class="w-full md:w-1/3 p-4">
           <div class="flex flex-col justify-between p-8 h-full bg-blue-500 rounded-3xl">
             <div class="flex-initial mb-6"><span class="inline-block mb-6 text-sm text-white font-bold uppercase tracking-widest">Private Phone 1 Day Rental </span>
-              <h2 class="font-heading text-4xl text-white font-black tracking-tight"><span>$10</span><span class="text-xl text-blue-400 font-bold">/day</span></h2>
+              <h2 class="font-heading text-4xl text-white font-black tracking-tight"><span>$8</span><span class="text-xl text-blue-400 font-bold">/day</span></h2>
               <p class="mb-8 text-sm text-blue-200 font-bold">Billed 1 Day At A Time</p>
               <ul>
 <!--                 <li class="flex items-center mb-4">
@@ -212,7 +212,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-blue-500 font-bold bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 rounded-full" to="/checkout3month">Purchase</router-link></div>
+                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-blue-500 font-bold bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 rounded-full" to="/">Sold Out</router-link></div>
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@ const messageArray = ref([])
               </ul></div>
             <div class="flex-initial">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full" to="/checkout12month">Purchase</router-link></div>
+                <div class="w-full p-2"><router-link class="block w-full px-8 py-3.5 text-lg text-center text-gray-100 font-bold bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-400 rounded-full" to="/">Sold Out</router-link></div>
               </div>
             </div>
           </div>
