@@ -1,13 +1,16 @@
 <script setup>
 import axios from 'axios';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 import words from '@/assets/bip39Wordlist.txt?raw'
-const passphraseWords = ref(["","","","","","","",""])
+const passphraseWords = ref(["", "", "", "", "", "", "", ""])
+const phoneNumber = ref('')
 const orderData = ref({})
+const rentalPhoneMessages = ref([])
 const message = ref('')
 const customChatDiv = ref(null)
+const customChatDiv2 = ref(null)
 function getPassphraseInputLabels(i) {
   var j = i % 10,
         k = i % 100;
@@ -37,10 +40,12 @@ async function signIn() {
   }
   const results = await axios.post('/.netlify/functions/getOrderInfo', { passphrase: numberArray })
   orderData.value = results.data
-  console.log(orderData.value)
+  await getCorrectRentalMessages()
   await waitforme(500)
   const div = customChatDiv.value
-  div.scrollTo({top: 99999999999999999999999999999, behavior: "smooth"})
+  div.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
+    const div2 = customChatDiv2.value
+  div2.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
 }
 function wordToNumber(word) {
   const wordArray = words.split(/\r?\n/)
@@ -53,21 +58,22 @@ function wordToNumber(word) {
   }
  return false
 }
-function purchaseDict(purchase) {
-  const dict = {
-    '12month': '12 Month',
-    '1week': '1 week',
-    '3month': '3 month'
-  }
-  return dict[purchase]
+async function getCorrectRentalMessages() {
+  const results = await axios.post('/.netlify/functions/getCorrectRentalMessages',
+    { passphrase: orderData.value.passphrase.split(",") })
+  rentalPhoneMessages.value = results.data.messages
+  phoneNumber.value = results.data.phoneNumber
 }
 async function refresh() {
   const results = await axios.post('/.netlify/functions/getOrderInfo', 
   { passphrase: orderData.value.passphrase.split(",") })
   orderData.value = results.data
+  await getCorrectRentalMessages()
   await waitforme(500)
   const div = customChatDiv.value
-  div.scrollTo({top: 99999999999999999999999999999, behavior: "smooth"})
+  div.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
+  const div2 = customChatDiv2.value
+  div2.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
 }
 async function sendMessage() {
   await axios.post('/.netlify/functions/sendCustomerChat',
@@ -99,6 +105,14 @@ function getChatImage(sender) {
   }
   return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024702/landingpage/avatars/boy.svg'
 }
+const serviceInfo = computed(() => {
+  // console.log(orderData.value)
+  
+  return {
+    chosenPhone: orderData.value.chosenPhone,
+    serviceInfo: orderData.value.allOrderInformation.orderInfo.metadata
+  }
+})
 onMounted(() => {
   const routeInfo = router.currentRoute.value
   const routeName = routeInfo.name
@@ -190,13 +204,44 @@ onMounted(() => {
             </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 p-8">
-            <div class="md:max-w-md mx-auto">
-              <h3 class="font-heading text-2xl text-blue-500 font-black tracking-tight">Your Subscription Length:</h3>
-              <h2 class="font-heading mb-6 text-4xl md:text-5xl lg:text-6xl text-white font-black tracking-tight">
-                 {{ purchaseDict(orderData.allOrderInformation.orderInfo.metadata.purchase) }}</h2>
+          <div class="w-full md:w-1/2 p-8 ">
+              <div class="md:max-w-md mx-auto">
+                <div class="max-w-sm rounded shadow-lg">
+                <div class="px-6 py-4 bg-gray-800" >
+                  <div class="rounded-md font-bold mb-2 text-center mb-5 bg-blue-500 text-white py-4">
+                    <div class="text-xl px-5">{{ serviceInfo.serviceInfo.purchase.service }} 1 day & 1 Service Rental</div>
+                    <div class="text-2xl mt-3">Number: {{ phoneNumber}}</div>
+                  </div>
+                  <div style="height: 40vh;" class="overflow-auto" ref="customChatDiv2">
+                  <div class="text-white text-center text-xl" v-if="rentalPhoneMessages.length === 0">
+                    No Messages from {{ serviceInfo.serviceInfo.purchase.service }}
+                  </div>
+                  <div v-for="(message) in rentalPhoneMessages" v-if="rentalPhoneMessages.length !== 0">
+                    <div class="chat chat-start">
+                      <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                          <img :src="getChatImage(message.from)" />
+                        </div>
+                      </div>
+                      <div class="chat-header text-white">
+                        {{ message.from }}
+                    
+                      </div>
+                      <div class="chat-bubble break-words">{{ message.text }} </div>
+                      <div class="chat-footer text-white">
+                        Sent at {{ localTime(message.sentStamp) }}
+                      </div>
+                    </div>
+                </div>
+                     
+              </div>
+              <div class="flex flex-wrap my-1">
+                <div class="w-full lg:w-1/2 p-2"><button @click='refresh' class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 rounded-full">Check For New Messages</button></div>
+                  </div>
+                </div>
+              </div>
+              </div>
             </div>
-          </div>
         </div>
       </div>
 

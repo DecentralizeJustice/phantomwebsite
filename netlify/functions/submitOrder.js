@@ -74,8 +74,8 @@ async function process1Service(parsed) {
   await numberArraySchema.validateAsync(parsed.numberArray)
   const numberArray = parsed.numberArray.toString()
 
-  const serviceSchema = Joi.string().min(1).max(20)
-  await serviceSchema.validateAsync(parsed.service)
+  const serviceSchema = Joi.string().required().min(1).max(40)
+  await serviceSchema.validateAsync(parsed.purchaseInfo.service)
 
   const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
   const response = await axios.post(
@@ -94,7 +94,7 @@ async function process1Service(parsed) {
                 numberArray: numberArray,
                 purchase: {
                   serviceType: '1service',
-                  service: parsed.service
+                  service: parsed.purchaseInfo.service
                 },
                 timestamp: Date.now()
                }
