@@ -220,7 +220,7 @@ onMounted(() => {
                     <div class="chat chat-start">
                       <div class="chat-image avatar">
                         <div class="w-10 rounded-full">
-                          <img :src="getChatImage(message.from)" />
+                          <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687389222/landingpage/avatars/bot.svg" />
                         </div>
                       </div>
                       <div class="chat-header text-white">
