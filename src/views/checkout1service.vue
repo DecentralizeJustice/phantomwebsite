@@ -2,8 +2,7 @@
 import { ref, computed } from 'vue'
 import { getRandomInt, numberArrayToWordArray } from '@/assets/misc.js'
 import checkoutPassphrase from "@/components/checkoutPassphrase.vue"
-const serviceOptions = ['Twitter', 'Google Voice', 'Telegram', 'Signal', 'Apple', 'Facebook', 'Instagram', 'Paypal', 'Tinder',
-                        'Bumble', 'Hinge', 'Uber', 'TikTok']
+import { serviceOptions } from '@/assets/serviceList.js'
 const step = ref(0)
 const selected = ref('')
 const numberArray = ref([])
