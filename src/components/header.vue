@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
                 <div class="w-auto"><a href="#">
-                  <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687404904/landingpage/Phantom_Phone_3.svg" alt=""></a></div>
+                  <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687405771/landingpage/Phantom_Phone_4.svg" alt=""></a></div>
               </div>
         </div>
         <div class="w-auto">
