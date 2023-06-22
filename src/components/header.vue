@@ -56,16 +56,17 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex items-center justify-between px-6 py-3.5 bg-gray-900 rounded-full">
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
-                <div class="w-auto"><a href="#"><img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687404412/landingpage/Phantom_Phone_2.svg" alt=""></a></div>
+                <div class="w-auto"><a href="#">
+                  <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687404904/landingpage/Phantom_Phone_3.svg" alt=""></a></div>
               </div>
         </div>
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
             <div class="w-auto hidden lg:block">
               <ul class="flex items-center justify-center">
-                <li class="mr-9"><a class="inline-block text-xl font-bold text-gray-200 hover:text-gray-300 " href="/messageMe">Message Me</a></li>
-                <li class="mr-9"><a class="inline-block text-xl font-bold text-gray-200 hover:text-gray-300" href="/faq">FAQ</a></li>
-                <li class="mr-9"><a class="inline-block text-xl font-bold text-gray-200 hover:text-gray-300" href="https://blog.anonindustries.com/">Blog</a></li>
+                <li class="mr-9"><a class="inline-block text-lg font-bold text-gray-200 hover:text-gray-300 " href="/messageMe">Message Me</a></li>
+                <li class="mr-9"><a class="inline-block text-lg font-bold text-gray-200 hover:text-gray-300" href="/faq">FAQ</a></li>
+                <li class="mr-9"><a class="inline-block text-lg font-bold text-gray-200 hover:text-gray-300" href="https://blog.anonindustries.com/">Blog</a></li>
 <!--                 <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Solutions</a></li>
                 <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Resources</a></li>
                 <li><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Pricing</a></li> -->
