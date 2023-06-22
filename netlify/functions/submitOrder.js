@@ -18,6 +18,13 @@ exports.handler = async (event, context) => {
         body: JSON.stringify(returnInfo.data)
       }
     }
+    if (parsed.purchaseInfo.serviceType === '1month') {
+      const returnInfo = await process1month(parsed)
+      return {
+        statusCode: 200,
+        body: JSON.stringify(returnInfo.data)
+      }
+    }
 /*     if (parsed.purchase !== '12month' && parsed.purchase !== '1week' && parsed.purchase !== '3month') {
       return {
         statusCode: 500,
@@ -62,6 +69,10 @@ exports.handler = async (event, context) => {
       statusCode: 200,
       body: JSON.stringify(response.data)
     } */
+    return {
+      statusCode: 500,
+      body: ''
+    }
   } catch (error) {
     console.log(error)
     return {
@@ -71,7 +82,43 @@ exports.handler = async (event, context) => {
   }
  
 }
+async function process1month(parsed) {
 
+  const numberArraySchema = Joi.array().length(8).items(Joi.number().max(2050).min(0))
+  await numberArraySchema.validateAsync(parsed.numberArray)
+  const numberArray = parsed.numberArray.toString()
+
+  const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
+  const response = await axios.post(
+          storeAddress,
+          {
+              'amount': '2',
+              'speedPolicy': 'MediumSpeed',
+              'checkout': {
+                  'paymentMethods': [
+                      'XMR'
+                  ],
+                  'redirectURL': 'https://phantomphone.app/login',
+                  'redirectAutomatically': true
+              },
+              'metadata': { 
+                numberArray: numberArray,
+                purchase: {
+                  serviceType: '1month',
+                },
+                timestamp: Date.now()
+               }
+          },
+          {
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': BTCpayKey
+              }
+          }
+  )
+  return response
+  
+}
 async function process1Service(parsed) {
 
   const numberArraySchema = Joi.array().length(8).items(Joi.number().max(2050).min(0))

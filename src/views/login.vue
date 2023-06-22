@@ -204,7 +204,7 @@ onMounted(() => {
             </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 p-8 ">
+          <div class="w-full md:w-1/2 p-8 " v-if="serviceInfo.serviceInfo.purchase.serviceType === '1service'">
               <div class="md:max-w-md mx-auto">
                 <div class="max-w-sm rounded shadow-lg">
                 <div class="px-6 py-4 bg-gray-800" >

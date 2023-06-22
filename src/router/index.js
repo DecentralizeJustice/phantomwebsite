@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/landingpage.vue"
 import checkout1service from "../views/checkout1service.vue"
-import checkout3month from "../views/checkout3month.vue"
-import checkout1week from "../views/checkout1week.vue"
+import checkout1month from "../views/checkout1month.vue"
+import checkout1phoneshort from "../views/checkout1phoneshort.vue"
 import Login from "../views/login.vue"
 import faq from "../views/faq.vue"
 import messageMe from "../views/messageMe.vue"
@@ -29,14 +29,14 @@ const router = createRouter({
       component: checkout1service
     },
     {
-      path: "/checkout3month",
-      name: "checkout3month",
-      component: checkout3month
+      path: "/checkout1month",
+      name: "checkout1month",
+      component: checkout1month
     },
     {
-      path: "/checkout1week",
-      name: "checkout1week",
-      component: checkout1week
+      path: "/checkout1phoneshort",
+      name: "checkout1phoneshort",
+      component: checkout1phoneshort
     },
     {
       path: "/messageMe",
