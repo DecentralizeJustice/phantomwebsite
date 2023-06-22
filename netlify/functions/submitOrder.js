@@ -2,9 +2,17 @@ const BTCpayKey = process.env.BTCpayKey
 const BTCpayStore = process.env.BTCpayStore
 const axios = require("axios")
 const Joi = require("joi")
-const lib = require("./serviceList.js");
-// import { serviceOptions } from '@/assets/serviceList.js'
-console.log( lib)
+const testFolder = '.';
+const fs = require('fs');
+
+fs.readdir(testFolder, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+});
+// const lib = require("./serviceList.js");
+// import { serviceOptions } from './serviceList.js'
+// console.log( serviceOptions )
 exports.handler = async (event, context) => {
   try {
     const params = event.body
