@@ -108,7 +108,7 @@ async function process1Service(parsed) {
                 numberArray: numberArray,
                 purchase: {
                   serviceType: '1service',
-                  service: parsed.purchaseInfo.service
+                  service: parsed.purchaseInfo.service.replace(/[^a-zA-Z ]/g, "")
                 },
                 timestamp: Date.now()
                }
