@@ -103,7 +103,7 @@ function getChatImage(sender) {
   if (sender !== 'dgoon') {
     return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024666/landingpage/avatars/man_2.svg'
   }
-  return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1687402640/landingpage/blackavatar.svg'
+  return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1687402881/landingpage/avatars/african-man.svg'
 }
 const serviceInfo = computed(() => {
   // console.log(orderData.value)
