@@ -44,20 +44,28 @@ document.addEventListener('DOMContentLoaded', function() {
   <section class="pt-6 pb-10 bg-gray-800 overflow-hidden">
   <div class="container mx-auto px-4">
 
+<!--         <div class="mb-6">
+        <div class="flex items-center justify-between px-6 py-3.5 bg-gray-800 rounded-full">
+          <div class="w-auto">
+            <div class="flex flex-wrap items-center">
+              <div class="w-auto"><a href="#"><img src="zanrly-assets/logos/zanrly-logo-white.svg" alt=""></a></div>
+            </div>
+          </div> -->
+
     <div class="">
       <div class="flex items-center justify-between px-6 py-3.5 bg-gray-900 rounded-full">
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
-            <div class="w-auto"><a href="#"></a></div>
-          </div>
+                <div class="w-auto"><a href="#"><img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687404412/landingpage/Phantom_Phone_2.svg" alt=""></a></div>
+              </div>
         </div>
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
             <div class="w-auto hidden lg:block">
               <ul class="flex items-center justify-center">
-                <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="/messageMe">Message Me</a></li>
-                <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="/faq">FAQ</a></li>
-                <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="https://blog.anonindustries.com/">Blog</a></li>
+                <li class="mr-9"><a class="inline-block text-xl font-bold text-gray-200 hover:text-gray-300 " href="/messageMe">Message Me</a></li>
+                <li class="mr-9"><a class="inline-block text-xl font-bold text-gray-200 hover:text-gray-300" href="/faq">FAQ</a></li>
+                <li class="mr-9"><a class="inline-block text-xl font-bold text-gray-200 hover:text-gray-300" href="https://blog.anonindustries.com/">Blog</a></li>
 <!--                 <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Solutions</a></li>
                 <li class="mr-9"><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Resources</a></li>
                 <li><a class="inline-block text-sm font-bold text-gray-200 hover:text-gray-300" href="#">Pricing</a></li> -->
@@ -69,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="flex flex-wrap items-center">
             <div class="w-auto hidden lg:block">
               <div class="flex flex-wrap -m-2">
-                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full" href="/login">Login</a></div>
-                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="/">Home</a></div>
+                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-lg text-center text-white font-bold bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 rounded-full" href="/login">Login</a></div>
+                <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-lg text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full" href="/">Home</a></div>
               </div>
             </div>
             <div class="w-auto lg:hidden"><a class="inline-block" href="#">
