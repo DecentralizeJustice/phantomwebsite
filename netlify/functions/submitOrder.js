@@ -92,7 +92,7 @@ async function process1month(parsed) {
   const response = await axios.post(
           storeAddress,
           {
-              'amount': '2',
+              'amount': '15',
               'speedPolicy': 'MediumSpeed',
               'checkout': {
                   'paymentMethods': [
