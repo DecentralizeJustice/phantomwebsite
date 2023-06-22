@@ -2,7 +2,9 @@
 import { ref, computed } from 'vue'
 import { getRandomInt, numberArrayToWordArray } from '@/assets/misc.js'
 import checkoutPassphrase from "@/components/checkoutPassphrase.vue"
-import { serviceOptions } from '@/assets/serviceList.js'
+import services from '@/assets/serviceList.txt?raw'
+
+const serviceOptions = services.split(/\r?\n/)
 const step = ref(0)
 const selected = ref('')
 const numberArray = ref([])

@@ -2,17 +2,14 @@ const BTCpayKey = process.env.BTCpayKey
 const BTCpayStore = process.env.BTCpayStore
 const axios = require("axios")
 const Joi = require("joi")
-const testFolder = '.';
-const fs = require('fs');
-
-fs.readdir(testFolder, (err, files) => {
-  files.forEach(file => {
-    console.log(file);
-  });
-});
+const fs = require('fs')
+const path = require("path")
+const pathWordlist = path.resolve(__dirname + "/serviceList.txt")
+const words = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
 // const lib = require("./serviceList.js");
-// import { serviceOptions } from './serviceList.js'
+// import { serviceOptions } from './src/assets/serviceList.mjs'
 // console.log( serviceOptions )
+console.log(words)
 exports.handler = async (event, context) => {
   try {
     const params = event.body
