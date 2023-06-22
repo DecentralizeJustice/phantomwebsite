@@ -1,10 +1,11 @@
 <script setup>
 import axios from 'axios';
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 import words from '@/assets/bip39Wordlist.txt?raw'
 const passphraseWords = ref(["", "", "", "", "", "", "", ""])
+const wrongWord = ref(999)
 const phoneNumber = ref('')
 const orderData = ref({})
 const rentalPhoneMessages = ref([])
@@ -35,7 +36,11 @@ async function signIn() {
   for (let index = 0; index < 8; index++) {
     const element = passphraseWords.value[index]
     const number = wordToNumber(element)
-    if(number === false){ throw new Error(index + ' is not a correct word') }
+    if (number === false) {
+      wrongWord.value = index
+      console.log((index + 1) + ' is not a correct word')
+      return
+    }
     numberArray.push(number)
   }
   const results = await axios.post('/.netlify/functions/getOrderInfo', { passphrase: numberArray })
@@ -113,6 +118,9 @@ const serviceInfo = computed(() => {
     serviceInfo: orderData.value.allOrderInformation.orderInfo.metadata
   }
 })
+const allEntered = computed(() => {
+  return !passphraseWords.value.includes('')
+})
 onMounted(() => {
   const routeInfo = router.currentRoute.value
   const routeName = routeInfo.name
@@ -120,9 +128,18 @@ onMounted(() => {
   if (routeName === 'login') {
     const rawFrag = routeHash.substring(1)
     const fragWordArray = rawFrag.split(',')
-    passphraseWords.value = fragWordArray
+    if (fragWordArray.length === 8) {
+      passphraseWords.value = fragWordArray
+    }
   }
 })
+watch(
+  () => passphraseWords,
+  (newValue, oldValue) => {
+    wrongWord.value = 999
+  },
+  { deep: true }
+)
 </script>
 
 <template>
@@ -140,13 +157,15 @@ onMounted(() => {
           </div>
             <div class="flex flex-wrap -m-3 mb-5">
               <div class="w-full p-3 mx-6 md:mx-0 flex flex-col items-left" v-for="index in 8" :key="index">
+                <div v-if="index === wrongWord + 1" class="text-red-500 text-center text-lg font-bold">{{index}} is Not a Valid Word!</div>
                 <label class="block mb-2 text-sm text-gray-400 font-bold" for="signInDarkReversePatternInput3-1">{{ index }}.</label>
                 <input class="appearance-none px-6 py-3.5 md:w-full text-lg text-gray-500 font-bold bg-gray-800 placeholder-gray-500 outline-none border border-gray-700 focus:ring-4 focus:ring-blue-200 rounded-full" v-model="passphraseWords[index-1]" :placeholder='getPassphraseInputLabels(index) + " Word"'>
               </div>
               <div class="w-full p-3 mt-2">
                 <div class="flex flex-wrap md:justify-end -m-2">
                   <div class="w-full md:p-2 p-5">
-                    <button class="w-full block px-8 py-3.5 text-lg text-center text-white font-bold bg-blue-500 hover:bg-blue-600  rounded-full" @click="signIn()">Sign In</button>
+                    <button v-if='!allEntered' class="w-full block px-8 py-3.5 text-lg text-center text-white font-bold bg-slate-700 rounded-full" @click="">Sign In</button>
+                    <button v-if="allEntered" class="w-full block px-8 py-3.5 text-lg text-center text-white font-bold bg-blue-500 hover:bg-blue-600  rounded-full" @click="signIn()">Sign In</button>
                   </div>
                 </div>
               </div>
