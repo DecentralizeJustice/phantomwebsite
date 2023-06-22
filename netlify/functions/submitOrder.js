@@ -5,14 +5,12 @@ const Joi = require("joi")
 const fs = require('fs')
 const path = require("path")
 const pathWordlist = path.resolve("./src/assets/serviceList.txt")
-const words = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
+const serviceList = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
 
-console.log(words)
 exports.handler = async (event, context) => {
   try {
     const params = event.body
     const parsed = JSON.parse(params)
-    console.log(parsed)
     if (parsed.purchaseInfo.serviceType === '1service') {
       const returnInfo = await process1Service(parsed)
       return {
@@ -80,9 +78,19 @@ async function process1Service(parsed) {
   await numberArraySchema.validateAsync(parsed.numberArray)
   const numberArray = parsed.numberArray.toString()
 
-  const serviceSchema = Joi.string().required().min(1).max(40)
+  const serviceSchema = Joi.string().required().min(4).max(40)
   await serviceSchema.validateAsync(parsed.purchaseInfo.service)
 
+  let serviceCorrect = false
+  for (let element of serviceList) {
+    if (element.replace(/[^a-zA-Z ]/g, "") === parsed.purchaseInfo.service.replace(/[^a-zA-Z ]/g, "")) {
+      serviceCorrect = true
+      break
+    }
+  }
+  if (!serviceCorrect) {
+    throw new Error('Service is not correct')
+  }
   const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
   const response = await axios.post(
           storeAddress,
