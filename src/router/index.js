@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/landingpage.vue"
 import checkout1service from "../views/checkout1service.vue"
 import checkout1month from "../views/checkout1month.vue"
-import checkout1phoneshort from "../views/checkout1phoneshort.vue"
+// import checkout1phoneshort from "../views/checkout1phoneshort.vue"
 import Login from "../views/login.vue"
 import faq from "../views/faq.vue"
 import messageMe from "../views/messageMe.vue"
@@ -33,11 +33,11 @@ const router = createRouter({
       name: "checkout1month",
       component: checkout1month
     },
-    {
+/*     {
       path: "/checkout1phoneshort",
       name: "checkout1phoneshort",
       component: checkout1phoneshort
-    },
+    }, */
     {
       path: "/messageMe",
       name: "messageMe",
