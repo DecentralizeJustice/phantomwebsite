@@ -1,6 +1,5 @@
 Twitter
 Google Voice
-Telegram
 Signal
 Apple
 Facebook
