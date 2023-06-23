@@ -154,7 +154,8 @@ async function process1Service(parsed) {
                 numberArray: numberArray,
                 purchase: {
                   serviceType: '1service',
-                  service: parsed.purchaseInfo.service
+                  service: parsed.purchaseInfo.service,
+                  price: serviceList[parsed.purchaseInfo.service].price
                 },
                 timestamp: Date.now()
                }
