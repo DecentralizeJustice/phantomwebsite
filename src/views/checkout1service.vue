@@ -85,7 +85,7 @@ onMounted(() => {
           <div class="w-full md:w-1/2 p-8 order-first md:order-last">
             <div class="md:max-w-md mx-auto text-center" v-if='step === 0'>
               <span class="inline-block mb-6 text-lg text-blue-500 font-bold uppercase tracking-widest">Purchase 1 Service Phone Rental</span>
-                <h2 class="font-heading  text-5xl  md:text-6xl text-white font-black tracking-tight">~$1.5/service</h2>
+                <h2 class="font-heading  text-4xl  md:text-6xl text-white font-black tracking-tight">~$1.5/service</h2>
                     <p class="mb-8 mt-2 text-lg text-gray-700 font-bold">Verify One Service with 1 Day Access</p>
                     <ul class="text-left"><li class="flex items-center mb-4">
                       <svg class="mr-2.5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16699 10.8333L7.50033 14.1667L15.8337 5.83333" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="text-gray-100 font-bold text-xl">You Have 1 day to verify 1 service</p>
@@ -105,6 +105,7 @@ onMounted(() => {
                     </ul>
                     <div class="mb-4">
                       <label class="inline-block mb-2 text-white font-bold text-2xl">Select Service</label>
+                      
                       <div class="px-6 py-3.5 mb-4 bg-gray-900 border border-gray-900 rounded-3xl">
                         <select v-model="selected" class="w-full bg-transparent text-lg text-white placeholder-gray-200 font-bold outline-none" name="field-name">
                           <option disabled value="">Please select one</option>
@@ -112,6 +113,8 @@ onMounted(() => {
                         </select>
                       </div>
                     </div>
+                    <div class="text-white text-xl" v-if="selected !== ''">
+                      Service Cost: ${{ servicePriceandStock[selected].price.toLocaleString("en", { useGrouping: false, minimumFractionDigits: 2 }) }}</div>
                     <div class="flex flex-wrap justify-center -m-2 mt-5">
                   <div class="w-full md:w-auto p-2">
                     <button v-if="selected===''" disabled class="block w-full px-4 py-2.5 text-lg text-center text-white font-bold bg-slate-500  rounded-full" @click="getPassphrase()">Purchase</button>
