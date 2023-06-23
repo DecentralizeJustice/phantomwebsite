@@ -12,6 +12,7 @@ const rentalPhoneMessages = ref([])
 const message = ref('')
 const customChatDiv = ref(null)
 const customChatDiv2 = ref(null)
+const orderDoesNotExist = ref(false)
 function getPassphraseInputLabels(i) {
   var j = i % 10,
         k = i % 100;
@@ -32,25 +33,34 @@ function waitforme(millisec) {
     })
 }
 async function signIn() {
-  const numberArray = []
-  for (let index = 0; index < 8; index++) {
-    const element = passphraseWords.value[index]
-    const number = wordToNumber(element)
-    if (number === false) {
-      wrongWord.value = index
-      console.log((index + 1) + ' is not a correct word')
-      return
+  try {
+      const numberArray = []
+    for (let index = 0; index < 8; index++) {
+      const element = passphraseWords.value[index]
+      const number = wordToNumber(element)
+      if (number === false) {
+        wrongWord.value = index
+        console.log((index + 1) + ' is not a correct word')
+        return
+      }
+      numberArray.push(number)
     }
-    numberArray.push(number)
-  }
-  const results = await axios.post('/.netlify/functions/getOrderInfo', { passphrase: numberArray })
-  orderData.value = results.data
-  await getCorrectRentalMessages()
-  await waitforme(500)
-  const div = customChatDiv.value
-  div.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
+    const results = await axios.post('/.netlify/functions/getOrderInfo', { passphrase: numberArray })
+    if (results.data === null) {
+      orderDoesNotExist.value = true
+      throw new Error('Order does not exist')
+    }
+    orderData.value = results.data
+    await getCorrectRentalMessages()
+    await waitforme(500)
+    const div = customChatDiv.value
+    div.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
     const div2 = customChatDiv2.value
-  div2.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
+    div2.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
+  } catch (error) {
+    console.log(error)
+  }
+
 }
 function wordToNumber(word) {
   const wordArray = words.split(/\r?\n/)
@@ -151,10 +161,14 @@ watch(
       </div>
       <div class="relative"><img class="mb-8 mx-auto" src="" alt="">
         <div class="md:max-w-md mx-auto">
-          <div class="mb-10 text-center">
-            <h2 class="font-heading mb-4 text-4xl md:text-5xl text-white font-black tracking-tight">Welcome</h2>
+          <div v-if="!orderDoesNotExist" class="mb-10 text-center">
+            <h2 class="font-heading mb-4 text-4xl md:text-5xl text-white font-black tracking-tight">Welcome</h2>>
             <p class="text-gray-400 font-bold">Please enter your 8 word passphrase below:</p>
           </div>
+          <div v-if="orderDoesNotExist" class="mb-10 text-center" >
+              <h2  class="font-heading mb-4 text-4xl md:text-4xl text-red-500 font-black">Your Order Does Not Exist. Check your
+              passphrase or message me <a class='text-blue-500' href="/messageMe">here!</a></h2>
+            </div>
             <div class="flex flex-wrap -m-3 mb-5">
               <div class="w-full p-3 mx-6 md:mx-0 flex flex-col items-left" v-for="index in 8" :key="index">
                 <div v-if="index === wrongWord + 1" class="text-red-500 text-center text-lg font-bold">{{index}} is Not a Valid Word!</div>
