@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex items-center justify-between px-6 py-3.5 bg-gray-900 rounded-full">
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
-                <div class="w-auto"><a href="#">
+                <div class="w-auto"><a href="/">
                   <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687405771/landingpage/Phantom_Phone_4.svg" alt=""></a></div>
               </div>
         </div>
