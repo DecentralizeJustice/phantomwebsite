@@ -116,10 +116,10 @@ const messageArray = ref([])
                 <img :src=getAvatar(n.from) /> 
                 </div> 
               </div> 
-              <div class="chat-header"> {{n.from}}
+              <div class="chat-header text-white"> {{n.from}}
               </div> 
               <div class="chat-bubble break-words">{{n.text}}</div> 
-              <div class="chat-footer opacity-50">
+              <div class="chat-footer opacity-50 text-white">
             Sent at {{localTime(n.sentStamp)}}
           </div>
             </div></div>
