@@ -4,9 +4,8 @@ const axios = require("axios")
 const Joi = require("joi")
 const fs = require('fs')
 const path = require("path")
-const pathWordlist = path.resolve("./src/assets/serviceList.txt")
-const serviceList = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
-
+const pathServiceList = path.resolve("./src/assets/serviceList.json")
+const serviceList = JSON.parse(fs.readFileSync(pathServiceList, 'utf8'))
 exports.handler = async (event, context) => {
   try {
     const params = event.body
@@ -129,8 +128,8 @@ async function process1Service(parsed) {
   await serviceSchema.validateAsync(parsed.purchaseInfo.service)
 
   let serviceCorrect = false
-  for (let element of serviceList) {
-    if (element.replace(/[^a-zA-Z ]/g, "") === parsed.purchaseInfo.service.replace(/[^a-zA-Z ]/g, "")) {
+  for (let element of Object.keys(serviceList)) {
+    if (element === parsed.purchaseInfo.service) {
       serviceCorrect = true
       break
     }
@@ -142,7 +141,7 @@ async function process1Service(parsed) {
   const response = await axios.post(
           storeAddress,
           {
-              'amount': '2',
+              'amount': serviceList[parsed.purchaseInfo.service].price,
               'speedPolicy': 'MediumSpeed',
               'checkout': {
                   'paymentMethods': [
@@ -155,7 +154,7 @@ async function process1Service(parsed) {
                 numberArray: numberArray,
                 purchase: {
                   serviceType: '1service',
-                  service: parsed.purchaseInfo.service.replace(/[^a-zA-Z ]/g, "")
+                  service: parsed.purchaseInfo.service
                 },
                 timestamp: Date.now()
                }

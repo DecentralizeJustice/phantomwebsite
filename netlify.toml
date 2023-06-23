@@ -3,4 +3,4 @@
   to = "/index.html"
   status = 200
 [functions]
-  included_files = ["./src/assets/serviceList.txt", "/src/assets/serviceList.txt" ]
+  included_files = ["./src/assets/serviceList.txt", "/src/assets/serviceList.txt",  "./src/assets/serviceList.json", "/src/assets/serviceList.json"]

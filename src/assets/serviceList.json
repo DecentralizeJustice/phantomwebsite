@@ -1,0 +1,47 @@
+{
+    "Twitter": {
+        "price": 1.50
+    },
+    "Google Voice": {
+        "price": 1.50
+    },
+    "Signal":  {
+        "price": 1.50
+    },
+    "Apple":  {
+        "price": 1.50
+    },
+    "Telegram":  {
+        "price": 3.00
+    },
+    "Instagram":  {
+        "price": 1.50
+    },
+    "Paypal":  {
+        "price": 1.50
+    },
+    "Tinder":  {
+        "price": 1.50
+    },
+    "Bumble":  {
+        "price": 1.50
+    },
+    "Hinge":  {
+        "price": 1.50
+    },
+    "Uber":  {
+        "price": 1.50
+    },
+    "Tik Tok":  {
+        "price": 1.50
+    },
+    "Uber Eats":  {
+        "price": 1.50
+    },
+    "Grubhub":  {
+        "price": 1.50
+    },
+    "DoorDash":  {
+        "price": 1.50
+    }
+}
