@@ -16,6 +16,13 @@ async function sendMessage() {
   messageSent.value = true
 }
 const faq = [
+    {
+    question: `Hi, congratulate you on the company, I wanted to ask if you could enable the option to pay anonymously with XMR (monero) and BTC (bitcoin) otherwise I could not pay for the service in another way just for privacy. I am a crypto-anarchist of Timothy C. May philosophy
+
+Thank you and I look forward to any changes in transactions and policies.`,
+    answer: `Hi. I currently accept Monero and most altcoins (via trocador app at checkout). Did your message mean something else though?
+    `
+  },
   {
     question: `Hi ser. First I would like to thank you for your hard work and your dedication to the privacy world.
 
