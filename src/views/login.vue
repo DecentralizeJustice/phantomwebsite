@@ -74,10 +74,19 @@ function wordToNumber(word) {
  return false
 }
 async function getCorrectRentalMessages() {
-  const results = await axios.post('/.netlify/functions/getCorrectRentalMessages',
+
+  let results = {}
+  if(serviceInfo.value.serviceInfo.purchase.serviceType === '1month'){
+    results = await axios.post('/.netlify/functions/getCorrectRentalSoloRentalMessages',
     { passphrase: orderData.value.passphrase.split(",") })
+  } else {
+    results = await axios.post('/.netlify/functions/getCorrectRentalMessages',
+    { passphrase: orderData.value.passphrase.split(",") })
+  }
+
   rentalPhoneMessages.value = results.data.messages
   phoneNumber.value = results.data.phoneNumber
+  return
 }
 async function refresh() {
   const results = await axios.post('/.netlify/functions/getOrderInfo', 
@@ -162,7 +171,7 @@ watch(
       <div class="relative"><img class="mb-8 mx-auto" src="" alt="">
         <div class="md:max-w-md mx-auto">
           <div v-if="!orderDoesNotExist" class="mb-10 text-center">
-            <h2 class="font-heading mb-4 text-4xl md:text-5xl text-white font-black tracking-tight">Welcome</h2>>
+            <h2 class="font-heading mb-4 text-4xl md:text-5xl text-white font-black tracking-tight">Welcome</h2>
             <p class="text-gray-400 font-bold">Please enter your 8 word passphrase below:</p>
           </div>
           <div v-if="orderDoesNotExist" class="mb-10 text-center" >
@@ -237,6 +246,44 @@ watch(
             </div>
             </div>
           </div>
+          <div class="w-full md:w-1/2 p-8 " v-if="serviceInfo.serviceInfo.purchase.serviceType === '1month'">
+              <div class="md:max-w-md mx-auto">
+                <div class="max-w-sm rounded shadow-lg">
+                <div class="px-6 py-4 bg-gray-800" >
+                  <div class="rounded-md font-bold mb-2 text-center mb-5 bg-blue-500 text-white py-4">
+                    <div class="text-xl px-5">{{ serviceInfo.serviceInfo.purchase.service }} 1 Month Whole Service Rental</div>
+                    <div class="text-2xl mt-3">Number: {{  phoneNumber }}</div>
+                  </div>
+                  <div style="height: 40vh;" class="overflow-auto" ref="customChatDiv2">
+                  <div class="text-white text-center text-xl" v-if="rentalPhoneMessages.length === 0">
+                    No Messages from {{ serviceInfo.serviceInfo.purchase.service }}
+                  </div>
+                  <div v-for="(message) in rentalPhoneMessages" v-if="rentalPhoneMessages.length !== 0">
+                    <div class="chat chat-start">
+                      <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                          <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1687389222/landingpage/avatars/bot.svg" />
+                        </div>
+                      </div>
+                      <div class="chat-header text-white">
+                        {{ message.from }}
+                    
+                      </div>
+                      <div class="chat-bubble break-words">{{ message.text }} </div>
+                      <div class="chat-footer text-white">
+                        Sent at {{ localTime(message.sentStamp) }}
+                      </div>
+                    </div>
+                </div>
+                     
+              </div>
+              <div class="flex flex-wrap my-1">
+                <div class="w-full lg:w-1/2 p-2"><button @click='refresh' class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 rounded-full">Check For New Messages</button></div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
           <div class="w-full md:w-1/2 p-8 " v-if="serviceInfo.serviceInfo.purchase.serviceType === '1service'">
               <div class="md:max-w-md mx-auto">
                 <div class="max-w-sm rounded shadow-lg">
