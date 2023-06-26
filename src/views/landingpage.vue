@@ -262,7 +262,7 @@ const messageArray = ref([])
     <div class="flex flex-wrap lg:items-center -m-8">
       <div class="w-full md:w-1/2 p-8">
         <div class="md:max-w-md"><span class="inline-block mb-4 text-sm text-blue-500 font-bold uppercase tracking-widest">How it works</span>
-          <h2 class="font-heading mb-6 text-4xl md:text-5xl text-gray-100 font-black tracking-tight" contenteditable="false">A Real Phone that works with Most online service</h2>
+          <h2 class="font-heading mb-6 text-4xl md:text-5xl text-gray-100 font-black tracking-tight" contenteditable="false">A Real Phone that works with Most Online Services</h2>
           <p class="mb-5 text-gray-500 font-bold">I have built a open &amp; private system that gives you the ability to use platforms that requires a phone number privately. My phones are real phones and work on most platforms!</p>
 <!--           <div class="flex flex-wrap -m-2">
             <div class="w-full md:w-auto p-2"><a class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full">Coming Soon</a></div>
