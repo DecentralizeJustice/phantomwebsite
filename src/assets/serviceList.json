@@ -17,7 +17,7 @@
     "Instagram":  {
         "price": 1.50
     },
-    "Paypal":  {
+    "PayPal":  {
         "price": 1.50
     },
     "Tinder":  {
@@ -32,10 +32,22 @@
     "Uber":  {
         "price": 1.50
     },
-    "Tik Tok":  {
+    "TikTok":  {
         "price": 1.50
     },
-    "Uber Eats":  {
+    "Discord":  {
+        "price": 1.50
+    },
+    "OpenAI":  {
+        "price": 1.50
+    },
+    "Amazon":  {
+        "price": 1.50
+    },
+    "Fold":  {
+        "price": 1.50
+    }
+/*     "Uber Eats":  {
         "price": 1.50
     },
     "Grubhub":  {
@@ -43,5 +55,5 @@
     },
     "DoorDash":  {
         "price": 1.50
-    }
+    } */
 }
