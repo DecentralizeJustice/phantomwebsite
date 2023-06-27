@@ -4,14 +4,11 @@ import { ref, onMounted, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 import words from '@/assets/bip39Wordlist.txt?raw'
+import OneMonthLong from '@/components/1monthLongTermAccount.vue'
+import OneServiceShort from '@/components/1serviceShortTermAccount.vue'
 const passphraseWords = ref(["", "", "", "", "", "", "", ""])
 const wrongWord = ref(999)
-const phoneNumber = ref('')
 const orderData = ref({})
-const rentalPhoneMessages = ref([])
-const message = ref('')
-const customChatDiv = ref(null)
-const customChatDiv2 = ref(null)
 const orderDoesNotExist = ref(false)
 function getPassphraseInputLabels(i) {
   var j = i % 10,
@@ -26,11 +23,6 @@ function getPassphraseInputLabels(i) {
         return i + "rd";
     }
     return i + "th";
-}
-function waitforme(millisec) {
-    return new Promise(resolve => {
-        setTimeout(() => { resolve('') }, millisec);
-    })
 }
 async function signIn() {
   try {
@@ -50,13 +42,9 @@ async function signIn() {
       orderDoesNotExist.value = true
       throw new Error('Order does not exist')
     }
+    
     orderData.value = results.data
-    await getCorrectRentalMessages()
-    await waitforme(500)
-    const div = customChatDiv.value
-    div.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
-    const div2 = customChatDiv2.value
-    div2.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
+    console.log(orderData.value.allOrderInformation.orderInfo.metadata.purchase.serviceType)
   } catch (error) {
     console.log(error)
   }
@@ -73,70 +61,6 @@ function wordToNumber(word) {
   }
  return false
 }
-async function getCorrectRentalMessages() {
-
-  let results = {}
-  if(serviceInfo.value.serviceInfo.purchase.serviceType === '1month'){
-    results = await axios.post('/.netlify/functions/getCorrectRentalSoloRentalMessages',
-    { passphrase: orderData.value.passphrase.split(",") })
-  } else {
-    results = await axios.post('/.netlify/functions/getCorrectRentalMessages',
-    { passphrase: orderData.value.passphrase.split(",") })
-  }
-
-  rentalPhoneMessages.value = results.data.messages
-  phoneNumber.value = results.data.phoneNumber
-  return
-}
-async function refresh() {
-  const results = await axios.post('/.netlify/functions/getOrderInfo', 
-  { passphrase: orderData.value.passphrase.split(",") })
-  orderData.value = results.data
-  await getCorrectRentalMessages()
-  await waitforme(500)
-  const div = customChatDiv.value
-  div.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
-  const div2 = customChatDiv2.value
-  div2.scrollTo({ top: 99999999999999999999999999999, behavior: "smooth" })
-}
-async function sendMessage() {
-  await axios.post('/.netlify/functions/sendCustomerChat',
-   { 
-    passphrase: orderData.value.passphrase.split(","), 
-    message: message.value, 
-    sender: 'customer' 
-  })
-  message.value = ''
-  await refresh()
-}
-function localTime(epoch) {
-  var timestamp = epoch;
-  var date = new Date(timestamp);
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  var day =  date.getDate()
-  var month = date.getMonth() + 1
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm + ' ' + day + '/' + month
-  return strTime;
-}
-function getChatImage(sender) {
-  if (sender !== 'dgoon') {
-    return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1686024666/landingpage/avatars/man_2.svg'
-  }
-  return 'https://res.cloudinary.com/dylevfpbl/image/upload/v1687402881/landingpage/avatars/african-man.svg'
-}
-const serviceInfo = computed(() => {
-  // console.log(orderData.value)
-  
-  return {
-    chosenPhone: orderData.value.chosenPhone,
-    serviceInfo: orderData.value.allOrderInformation.orderInfo.metadata
-  }
-})
 const allEntered = computed(() => {
   return !passphraseWords.value.includes('')
 })
@@ -201,7 +125,11 @@ watch(
     </div>
   </div>
 </section>
-<section class="bg-gray-800 overflow-hidden" v-if="Object.keys(orderData).length !== 0">
+<section> 
+  <OneServiceShort :orderData="orderData" v-if="Object.keys(orderData).length !== 0 && orderData.allOrderInformation.orderInfo.metadata.purchase.serviceType === '1service'"/>
+  <OneMonthLong :orderData="orderData" v-if="Object.keys(orderData).length !== 0 && orderData.allOrderInformation.orderInfo.metadata.purchase.serviceType === '1month'"/>
+</section>
+<!-- <section class="bg-gray-800 overflow-hidden" v-if="Object.keys(orderData).length !== 0">
   <div class="container mx-auto px-4">
     <div class="relative p-10 bg-gray-900 overflow-hidden rounded-3xl">
       <div class="absolute top-1/2 left-1/2 min-w-max transform -translate-x-1/2 -translate-y-1/2">
@@ -287,7 +215,7 @@ watch(
           <div class="w-full md:w-1/2 p-8 " v-if="serviceInfo.serviceInfo.purchase.serviceType === '1service'">
               <div class="md:max-w-md mx-auto">
                 <div class="max-w-sm rounded shadow-lg">
-                <div class="px-6 py-4 bg-gray-800" >
+                <div class="px-6 py-4 bg-gray-800">
                   <div class="rounded-md font-bold mb-2 text-center mb-5 bg-blue-500 text-white py-4">
                     <div class="text-xl px-5">{{ serviceInfo.serviceInfo.purchase.service }} 1 day & 1 Service Rental</div>
                     <div class="text-2xl mt-3">Number: {{ phoneNumber}}</div>
@@ -327,7 +255,7 @@ watch(
 
     </div>
   </div>
-</section>
+</section> -->
 </template>
 
 <style scoped>
