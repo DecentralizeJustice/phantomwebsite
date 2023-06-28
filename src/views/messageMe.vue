@@ -16,6 +16,12 @@ async function sendMessage() {
   messageSent.value = true
 }
 const faq = [
+{
+    question: `1). When are the annual subscriptions going to be back in stock?
+
+2). If you're planning to offer discounts for annual subscriptions, will those discounts be available within the next 90 days?`,
+    answer: `Hi. I just got a couple of phones in today and I am waiting on the sims. It should be back up by tomorrow night. For an annual, I could do 10 a month with a year paid up front. So 120 total for a yar vs 180.`
+  },
     {
     question: `Hi, congratulate you on the company, I wanted to ask if you could enable the option to pay anonymously with XMR (monero) and BTC (bitcoin) otherwise I could not pay for the service in another way just for privacy. I am a crypto-anarchist of Timothy C. May philosophy
 
