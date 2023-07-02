@@ -36,7 +36,7 @@ I have few difficulty to really grasp what do you work on.
 
 With your service I can rent a number (not a phone right) so I can get on the phone I have today, or even better on a dedicated one.
 
-It can be used on any services like deliveries and stuff ? Or just to be able to create accounts on website that are asking for a number ?
+It can be used on any services like deliveries and stuff ? Or just to be able to create accounts on website that are asking for a number?
 
 Thanks again and keep up the work !`,
     answer: `Thanks for all of the support. This serivce allows you to rent a phone number for phone number verification services. If you wanted to use uber, but uber required
