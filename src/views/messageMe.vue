@@ -17,6 +17,10 @@ async function sendMessage() {
 }
 const faq = [
 {
+    question: `Hi, I'm not able to login to my account. I sent a payment and it has several confirmations (over 3). I get the following message: "Your Order Does Not Exist. Check your passphrase or message me here! Transactions take 3 blockes to confirm."`,
+    answer: `Its fixed now! Sorry for the delay.`
+  },
+{
     question: `1). When are the annual subscriptions going to be back in stock?
 
 2). If you're planning to offer discounts for annual subscriptions, will those discounts be available within the next 90 days?`,
