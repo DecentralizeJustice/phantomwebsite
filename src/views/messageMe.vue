@@ -17,6 +17,15 @@ async function sendMessage() {
 }
 const faq = [
 {
+    question: `I'm trying to pay for a year in advance, but when I get to the BTCPayServer page, it's asking me to send $15.
+
+There's no option to send $120 for an annual discount.
+
+What are we expected to do?
+`,
+    answer: `Hi Friend. You can simply place a 15 USD order and I will upgrade you. We can communicate further details in the chat after you place and order.`
+  },
+{
     question: `Hi, I'm not able to login to my account. I sent a payment and it has several confirmations (over 3). I get the following message: "Your Order Does Not Exist. Check your passphrase or message me here! Transactions take 3 blockes to confirm."`,
     answer: `Its fixed now! Sorry for the delay.`
   },
